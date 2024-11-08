@@ -1,0 +1,92 @@
+/* General Styles */
+body {
+    background-color: black;
+    color: white;
+    font-family: Didot, serif;
+}
+
+/* Header Styles */
+.header {
+    display: inline-block;
+    color: blue;
+    font-family: Didot, serif;
+    font-size: 6vw;
+    padding: 1vw 3vw;
+    border-bottom: 0.3vw solid blue;
+}
+
+/* Link Styles */
+a {
+    color: blue;
+    text-decoration: none;
+}
+
+/* Button Styles */
+button, a.button, .new-entry {
+    display: inline-flex;
+    text-align: left;
+    background: none;
+    color: blue;
+    font-family: Didot, serif;
+    font-size: 1.65vw;
+    width: fit-content;
+    max-width: 20vw;
+    padding: 0.55vw 1vw;
+    white-space: nowrap;
+    cursor: pointer;
+    border: 0.25vw solid blue;
+    border-radius: 0.3vw;
+}
+
+/* Hover Effects */
+button:hover {
+    background-color: rgb(7, 7, 7);
+}
+
+.options-content a:hover {
+    background-color: rgb(31, 31, 31);
+}
+
+/* Options and Dropdown Styles */
+.options {
+    position: relative;
+}
+
+.options-content {
+    display: none;
+    position: absolute;
+    left: 12vw;
+    top: -2vw;
+}
+
+.options:hover .options-content {
+    display: block;
+}
+
+/* Option Button Styles */
+.no-prompt, .shadow-prompt {
+    display: block;
+    text-align: left;
+    background: none;
+    color: blue;
+    font-family: Didot, serif;
+    font-size: 1.4vw;
+    width: fit-content;
+    padding: 0.55vw 1vw;
+    margin-bottom: 1vw;
+    white-space: nowrap;
+    cursor: pointer;
+    border: 0.25vw solid blue;
+    border-radius: 0.3vw;
+}
+
+/* Button Container */
+.buttons {
+    position: absolute;
+    height: 31vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    left: 4vw;
+    top: 14vw;
+}
