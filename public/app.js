@@ -4,7 +4,7 @@ function saveContent() {
     const content = document.querySelector('.editor-content').innerHTML.trim();
     const mood = document.querySelector('.mood-select').value;
     const currentDateTime = document.getElementById('currentDateTime').textContent;
-    const prompt = document.querySelector('.prompt-select') ? document.querySelector('.prompt-select').value : "No prompt.";
+    const prompt = document.querySelector('.promptText').textContent;
 
     if (content === "Type your text here...") {
         alert("Please write something before saving!");
@@ -92,7 +92,7 @@ function renderEntries() {
     reversedContentList.forEach((entry, index) => {
         const originalIndex = savedContentList.length - 1 - index;
 
-        const contentSnippet = entry.content.slice(0, 150) + (entry.content.length > 150 ? '...' : '');
+        const contentSnippet = entry.content.slice(0, 50) + (entry.content.length > 50 ? '...' : '');
 
         const entryElement = document.createElement('div');
         entryElement.classList.add('entry');
@@ -100,18 +100,18 @@ function renderEntries() {
         entryElement.innerHTML = `
             <div class="log">
                 <div class="bar-2">
-                    <div class="log-bar">${entry.prompt}</div>
                     <div class="log-bar">${entry.mood}</div>
-                    <div class="log-bar">${entry.dateTime}</div>
+                    <div class="log-bar">${entry.date}</div>
+                    <div class="space"></div>
+                    <div class="space"></div>
+                    <button class="log-bar view-btn" onclick="viewEntry(${originalIndex})">View</button>
+                    <button class="log-bar edit-btn" onclick="editEntry(${originalIndex})">Edit</button>
+                    <button class="log-bar delete-btn" onclick="deleteEntry(${originalIndex})">Delete</button>
                 </div>
                 <div class="log-entry">
-                    <div class="log-header">${entry.header || 'No Header'}</div>
+                    <div class="log-prompt">Prompt: ${entry.prompt}</div>
+                    <div class="log-header">${entry.header}</div>
                     <div class="log-content">${contentSnippet}</div>
-                    <div class="entry-actions">
-                        <button class="view-btn" onclick="viewEntry(${originalIndex})">View</button>
-                        <button class="edit-btn" onclick="editEntry(${originalIndex})">Edit</button>
-                        <button class="delete-btn" onclick="deleteEntry(${originalIndex})">Delete</button>
-                    </div>
                 </div>
             </div>
         `;
@@ -146,4 +146,6 @@ function deleteEntry(index) {
     renderEntries();
 }
 
-window.addEventListener('DOMContentLoaded', renderEntries);
+if (window.location.pathname === '/captains-log.html') {
+    window.addEventListener('DOMContentLoaded', renderEntries);
+}

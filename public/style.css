@@ -122,7 +122,6 @@ a {
     border-radius: 1vw;
     padding: 1vw;
     margin: 1vw;
-    max-width: 52vw;
 }
 
 .bar {
@@ -133,7 +132,6 @@ a {
 .bar-2 {
     display: flex;
     justify-content: space-around;
-    max-width: 50vw;
     margin: 0.8vw;
     border-bottom: 0.1vw solid blue;
 }
@@ -144,13 +142,13 @@ a {
 }
 
 .log-header {
-    font-size: 1.5vw;
+    font-size: 2vw;
     margin-bottom: 0.3vw;
 }
 
 .log-content {
-    margin-left: 1vw;
-    word-wrap: inherit;
+    font-size: 1vw;
+    margin-left: 3vw;
 }
 
 .editor {
@@ -292,7 +290,7 @@ a {
     color: blue;
     padding: 1vw;
     position: absolute;
-    left: 59vw;
+    left: 63vw;
     top: 24vw;
     border: 0.2vw solid blue;
     border-radius: 1vw;
@@ -301,10 +299,35 @@ a {
 .text-ffs {
     background-color: rgba(8, 8, 8, 0.8);
     color: blue;
+    max-width: 30vw;
     padding: 1vw;
     position: absolute;
-    left: 50vw;
+    left: 45vw;
     top: 35vw;
     border: 0.2vw solid blue;
     border-radius: 1vw;
+}
+
+.log-bar {
+    background: none;
+    color: blue;
+    font-family: Didot, serif;
+    font-size: 1vw;
+    width: fit-content;
+    margin-bottom: 1.5vw;
+    padding: 0.45vw 0.8vw;
+    white-space: nowrap;
+    border: 0.2vw solid blue;
+    border-radius: 0.3vw;
+}
+
+.view-btn, .edit-btn, .delete-btn {
+    cursor: pointer;
+}
+
+.log-prompt {
+    font-size: 1.4vw;
+    margin-left: -1vw;
+    padding-bottom: 1vw;
+    border-bottom: 0.1vw solid blue;
 }
