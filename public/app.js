@@ -6,8 +6,8 @@ function saveContent() {
     const currentDateTime = document.getElementById('currentDateTime').textContent;
     const prompt = document.querySelector('.promptText').textContent;
 
-    if (content === "Type your text here...") {
-        alert("Please write something before saving!");
+    if (header === "Enter your header..." || header === "") {
+        alert("Please add a header before saving!");
         return;
     }
 
@@ -33,23 +33,24 @@ function saveContent() {
     isContentChanged = false;
 }
 
+
 function throwContent() {
-    const editorHeader = document.getElementById('editor-header').innerText.trim();
-    const editorContent = document.getElementById('editor-content').innerText.trim();
+    const header = document.getElementById('editor-header').innerText.trim();
+    const content = document.getElementById('editor-content').innerText.trim();
     const mood = document.querySelector('.mood-select').value;
     const currentDateTime = document.getElementById('currentDateTime').textContent;
     
-    if (editorContent === "Type your content here..." || editorHeader === "") {
-        alert("Please write your message and add a header!");
+    if (header === "Enter your header..." || header === "") {
+        alert("Please add a header before saving!");
         return;
     }
 
     if (mood === "select-mood") {
-        alert("Please select a mood!");
+        alert("Please select a mood before saving!");
         return;
     }
 
-    const washUpDate = prompt("When would you like your bottle to wash up? (Please use the format YYYY-MM-DD)");
+    const washUpDate = prompt("When will your bottle hit land? (Please use the format YYYY-MM-DD)");
 
     if (!washUpDate) {
         alert("Please select a valid date.");
@@ -65,8 +66,8 @@ function throwContent() {
 
     const savedContentList = JSON.parse(localStorage.getItem('savedContentList')) || [];
     savedContentList.push({
-        header: editorHeader,
-        content: editorContent,
+        header: header,
+        content: content,
         mood: mood,
         dateTime: currentDateTime,
         washUpDate: washUpDate

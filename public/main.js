@@ -37,7 +37,7 @@ const facts = [
     },
     {
         preview: "Coral reefs are home to 25% of marine species;",
-        fullSentence: "despite covering less than 1% of the ocean floor, coral refs support a quarter of all marine life, making them essential to coean biodiversity.",
+        fullSentence: "despite covering less than 1% of the ocean floor, coral reefs support a quarter of all marine life, making them essential to coean biodiversity.",
     },
     {
         preview: "The largest migration on Earth happens in the ocean;",
