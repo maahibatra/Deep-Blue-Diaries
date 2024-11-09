@@ -10,12 +10,6 @@
         <div class="header-2">Message in a Bottle</div>
         <div class="header-3">&rarr; Write a message to your future self. Set a date to read it again.</div>
         <div class="bar">
-            <div class="format">
-                <button class="format-button" onclick="applyFormat('bold')">Bold</button>
-                <button class="format-button" onclick="applyFormat('italic')">Italic</button>
-                <button class="format-button" onclick="applyFormat('heading')">Heading</button>
-                <button class="format-button" onclick="applyFormat('list')">List</button>
-            </div>
             <div class="mood">
                 <select name="moods" class="mood-select">
                     <option value="select-mood">Select Mood</option>
@@ -26,12 +20,23 @@
                     <option value="excited">Excited</option>
                 </select>
             </div>
+            <div class="format">
+                <button class="format-button" onclick="applyFormat('bold')">Bold</button>
+                <button class="format-button" onclick="applyFormat('italic')">Italic</button>
+                <button class="format-button" onclick="applyFormat('heading')">Heading</button>
+                <button class="format-button" onclick="applyFormat('list')">List</button>
+            </div>
+            <div class="space"></div>
+            <div class="space"></div>
+            <div class="clock">
+                <span id="currentDateTime">YYYY-MM-DD / 00:00:00</span>
+            </div>
             <div class="submit">
                 <button class="save-entry" type="submit" form="journalForm">Throw the Bottle</button>
             </div>
-            <div class="clock">
-                <span id="currentDateTime">YYYY-MM-DD / 00:00:00</span>
-            </div>        
+            <div class="back">
+                <a href="index.html"><button class="home-button">Back</button></a>
+            </div>
         </div>
         <form id="journalForm" action="/submit-entry" method="post">
         <div class="text-editor" contenteditable="true" id="bottle-message">

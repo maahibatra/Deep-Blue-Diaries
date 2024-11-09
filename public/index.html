@@ -20,6 +20,48 @@
             <a href="message-in-a-bottle.html"><button class="button">Message in a Bottle</button></a>
             <a href="help.html"><button class="button">Help</button></a>
         </div>
+        <div class="mcff">
+            <a href="marine-conservation-whale.html" target="_blank">
+                <img class="mcwhale" src="assets/mcwhale.png" alt="Marine Conservation Whale">
+                <div class="text-mcw" id="conservation"></div>
+            </a>
+            <img class="ffshark" src="assets/ffshark.png" alt="Fun Fact Shark">
+            <div class="text-ffs" id="fun-fact"></div>
+        </div>
+        <script>
+            const facts = [
+                "Hello, I am a speaking image!",
+                "This is the random line number 2.",
+                "What is your favorite color?",
+                "The image is speaking again!",
+                "Do you like the weather today?",
+                "Here comes another random line!"
+            ]
+
+            const conservation = [
+                "Hello, I am a speaking image!",
+                "This is the random line number 2.",
+                "What is your favorite color?",
+                "The image is speaking again!",
+                "Do you like the weather today?",
+                "Here comes another random line!"
+            ];
+        
+            function getFact() {
+                const randomIndex = Math.floor(Math.random() * facts.length);
+                return facts[randomIndex];
+            }
+            
+            function getConservation() {
+                const randomIndex = Math.floor(Math.random() * conservation.length);
+                return conservation[randomIndex];
+            }
+        
+            window.onload = function() {
+                document.getElementById('conservation').textContent = getConservation();
+                document.getElementById('fun-fact').textContent = getFact();
+            };
+        </script>
         <script src="app.js"></script>
     </body>
 </html>
