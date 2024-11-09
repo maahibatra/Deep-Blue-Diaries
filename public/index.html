@@ -28,40 +28,7 @@
             <img class="ffshark" src="assets/ffshark.png" alt="Fun Fact Shark">
             <div class="text-ffs" id="fun-fact"></div>
         </div>
-        <script>
-            const facts = [
-                "Hello, I am a speaking image!",
-                "This is the random line number 2.",
-                "What is your favorite color?",
-                "The image is speaking again!",
-                "Do you like the weather today?",
-                "Here comes another random line!"
-            ]
-
-            const conservation = [
-                "Hello, I am a speaking image!",
-                "This is the random line number 2.",
-                "What is your favorite color?",
-                "The image is speaking again!",
-                "Do you like the weather today?",
-                "Here comes another random line!"
-            ];
-        
-            function getFact() {
-                const randomIndex = Math.floor(Math.random() * facts.length);
-                return facts[randomIndex];
-            }
-            
-            function getConservation() {
-                const randomIndex = Math.floor(Math.random() * conservation.length);
-                return conservation[randomIndex];
-            }
-        
-            window.onload = function() {
-                document.getElementById('conservation').textContent = getConservation();
-                document.getElementById('fun-fact').textContent = getFact();
-            };
-        </script>
+        <script src="main.js"></script>
         <script src="app.js"></script>
     </body>
 </html>

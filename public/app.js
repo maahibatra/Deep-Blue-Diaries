@@ -1,20 +1,3 @@
-let isContentChanged = false;
-
-const editor = document.getElementById('editor');
-editor.addEventListener('input', () => {
-    isContentChanged = true;
-});
-
-window.addEventListener('beforeunload', (event) => {
-    if (isContentChanged) {
-        const message = "You have unsaved content. Are you sure you want to leave without saving?";
-        
-        event.returnValue = message;
-        
-        return message;
-    }
-});
-
 function saveContent() {
     const editor = document.getElementById('editor');
     const header = document.querySelector('.editor-header').innerHTML.trim();
@@ -48,6 +31,54 @@ function saveContent() {
 
     window.location.href = "index.html";
     isContentChanged = false;
+}
+
+function throwContent() {
+    const editorHeader = document.getElementById('editor-header').innerText.trim();
+    const editorContent = document.getElementById('editor-content').innerText.trim();
+    const mood = document.querySelector('.mood-select').value;
+    const currentDateTime = document.getElementById('currentDateTime').textContent;
+    
+    if (editorContent === "Type your content here..." || editorHeader === "") {
+        alert("Please write your message and add a header!");
+        return;
+    }
+
+    if (mood === "select-mood") {
+        alert("Please select a mood!");
+        return;
+    }
+
+    const washUpDate = prompt("When would you like your bottle to wash up? (Please use the format YYYY-MM-DD)");
+
+    if (!washUpDate) {
+        alert("Please select a valid date.");
+        return;
+    }
+
+    const today = new Date();
+    const futureDate = new Date(washUpDate);
+    if (futureDate <= today) {
+        alert("Please select a future date.");
+        return;
+    }
+
+    const savedContentList = JSON.parse(localStorage.getItem('savedContentList')) || [];
+    savedContentList.push({
+        header: editorHeader,
+        content: editorContent,
+        mood: mood,
+        dateTime: currentDateTime,
+        washUpDate: washUpDate
+    });
+
+    localStorage.setItem('savedContentList', JSON.stringify(savedContentList));
+
+    document.getElementById('editor-header').innerText = '';
+    document.getElementById('editor-content').innerText = '';
+
+    alert("You threw the bottle! It will wash up on: " + washUpDate);
+    window.location.href = "index.html";
 }
 
 function renderEntries() {
@@ -114,7 +145,5 @@ function deleteEntry(index) {
     localStorage.setItem('savedContentList', JSON.stringify(savedContentList));
     renderEntries();
 }
-
-window.addEventListener('DOMContentLoaded', renderEntries);
 
 window.addEventListener('DOMContentLoaded', renderEntries);

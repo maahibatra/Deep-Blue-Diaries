@@ -32,34 +32,17 @@
                 <span id="currentDateTime">YYYY-MM-DD / 00:00:00</span>
             </div>
             <div class="submit">
-                <button class="save-entry" type="submit" form="journalForm">Throw the Bottle</button>
+                <button class="save-entry" type="submit" onclick="throwContent()">Throw Bottle</button>
             </div>
             <div class="back">
                 <a href="index.html"><button class="home-button">Back</button></a>
             </div>
         </div>
-        <form id="journalForm" action="/submit-entry" method="post">
-        <div class="text-editor" contenteditable="true" id="bottle-message">
-            Type your message here...
+        <div id="editor" class="editor">
+            <div class="editor-header" contenteditable="true" id="editor-header" placeholder="Enter your header..."></div>
+            <div class="editor-content" contenteditable="true" id="editor-content" placeholder="Type your content here..."></div>
         </div>
-        <script>
-            function updateDateTime() {
-                const now = new Date();
-                
-                const year = now.getFullYear();
-                const month = String(now.getMonth() + 1).padStart(2, '0');
-                const day = String(now.getDate()).padStart(2, '0');
-                
-                const hours = String(now.getHours()).padStart(2, '0');
-                const minutes = String(now.getMinutes()).padStart(2, '0');
-                const seconds = String(now.getSeconds()).padStart(2, '0');
-                
-                document.getElementById('currentDateTime').textContent = `${year}-${month}-${day} / ${hours}:${minutes}:${seconds}`;
-            }
-
-            setInterval(updateDateTime, 1000);
-            updateDateTime();
-        </script>
+        <script src="entry.js"></script>
         <script src="app.js"></script>
     </body>
 </html>
