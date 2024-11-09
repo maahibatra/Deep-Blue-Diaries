@@ -150,9 +150,10 @@ a {
 
 .log-content {
     margin-left: 1vw;
+    word-wrap: inherit;
 }
 
-.text-editor {
+.editor {
     background-color: rgb(12, 12, 12);
     height: 28vw;
     max-height: 28vw;
@@ -164,6 +165,15 @@ a {
     overflow-y: auto;
     word-wrap: break-word;
     color: blue;
+}
+
+.editor-header {
+    font-size: 1.7vw;;
+}
+
+.editor-header:focus, .editor-content:focus {
+    outline: none; /* Removes the default focus outline */
+    border: none; /* If any border appears, remove it */
 }
 
 .format-button {
