@@ -1,3 +1,5 @@
+    //Saving Journal Entries.
+
 function saveContent() {
     const editor = document.getElementById('editor');
     const header = document.querySelector('.editor-header').innerHTML.trim();
@@ -5,6 +7,8 @@ function saveContent() {
     const mood = document.querySelector('.mood-select').value;
     const currentDateTime = document.getElementById('currentDateTime').textContent;
     const prompt = document.querySelector('.promptText').textContent;
+
+        //Check if Fields are Filled.
 
     if (header === "Enter your header..." || header === "") {
         alert("Please add a header before saving!");
@@ -15,6 +19,8 @@ function saveContent() {
         alert("Please select a mood before saving!");
         return;
     }
+
+        //Push to localStorage.
 
     const savedContentList = JSON.parse(localStorage.getItem('savedContentList')) || [];
     savedContentList.push({
@@ -33,12 +39,15 @@ function saveContent() {
     isContentChanged = false;
 }
 
+    //Message in a Bottle Submission.
 
 function throwContent() {
     const header = document.getElementById('editor-header').innerText.trim();
     const content = document.getElementById('editor-content').innerText.trim();
     const mood = document.querySelector('.mood-select').value;
     const currentDateTime = document.getElementById('currentDateTime').textContent;
+
+        //Check if Fields are Filled.
     
     if (header === "Enter your header..." || header === "") {
         alert("Please add a header before saving!");
@@ -49,6 +58,8 @@ function throwContent() {
         alert("Please select a mood before saving!");
         return;
     }
+
+        //Ask and Verify Date.
 
     const washUpDate = prompt("When will your bottle hit land? (Please use the format YYYY-MM-DD)");
 
@@ -64,6 +75,8 @@ function throwContent() {
         return;
     }
 
+        //Push to localStorage.
+    
     const savedContentList = JSON.parse(localStorage.getItem('savedContentList')) || [];
     savedContentList.push({
         header: header,
@@ -82,6 +95,8 @@ function throwContent() {
     window.location.href = "index.html";
 }
 
+    //Render Entries.
+
 function renderEntries() {
     const logEntriesContainer = document.getElementById('log-entries');
     logEntriesContainer.innerHTML = "";
@@ -97,6 +112,8 @@ function renderEntries() {
 
         const entryElement = document.createElement('div');
         entryElement.classList.add('entry');
+
+            //Add to Captain's Logs.
 
         entryElement.innerHTML = `
             <div class="log">
@@ -121,12 +138,16 @@ function renderEntries() {
     });
 }
 
+    //View Button.
+
 function viewEntry(index) {
     const savedContentList = JSON.parse(localStorage.getItem('savedContentList')) || [];
     const entry = savedContentList[index];
 
     alert(`Viewing entry:\nHeader: ${entry.header || 'No Header'}\nContent: ${entry.content}`);
 }
+
+    //Edit Button.
 
 function editEntry(index) {
     const savedContentList = JSON.parse(localStorage.getItem('savedContentList')) || [];
@@ -139,6 +160,8 @@ function editEntry(index) {
         renderEntries();
     }
 }
+
+    //Delete Button.
 
 function deleteEntry(index) {
     const savedContentList = JSON.parse(localStorage.getItem('savedContentList')) || [];

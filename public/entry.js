@@ -16,10 +16,14 @@ const shadowPrompts = [
     "Think about a time when you took a risk or stepped into unfamiliar territory. What did you discover? How has it shaped your perspective on uncertainty and personal growth?"
 ];
 
+    //Ouch, again. Shadow Prompts Over.
+
 function getRandomPrompt() {
     const randomIndex = Math.floor(Math.random() * shadowPrompts.length);
     return shadowPrompts[randomIndex];
 }
+
+    //Give Prompt Area a Prompt.
 
 window.addEventListener('DOMContentLoaded', () => {
     const promptTextElement = document.getElementById('promptText');
@@ -29,6 +33,8 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+
+    //Formatting for Editor.
 
 function applyFormat(command) {
     const editorContent = document.getElementById('editor-content');
@@ -50,6 +56,8 @@ function applyFormat(command) {
     }
 }
 
+    //Clock.
+
 function updateDateTime() {
     const now = new Date();
     const year = now.getFullYear();
@@ -64,6 +72,8 @@ function updateDateTime() {
 
 setInterval(updateDateTime, 1000);
 updateDateTime();
+
+    //Placeholder for Editor.
 
 document.addEventListener('DOMContentLoaded', () => {
     const editorHeader = document.getElementById('editor-header');

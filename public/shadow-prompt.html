@@ -9,7 +9,11 @@
     <body>
         <div class="header-2">New Entry</div>
         <div class="header-3">&rarr; Prompt: <span id="promptText" class="promptText"></span></div>
+        
         <div class="bar">
+
+                <!--Ocean Themed Feelings Dropdown-->
+
             <div class="mood">
                 <select name="moods" class="mood-select">
                     <option value="select-mood">Select Mood</option>
@@ -25,28 +29,50 @@
                     <option value="Navigating Choppy Waters">Navigating Choppy Waters</option>
                 </select>
             </div>
+
+                <!--Formatting Options for Editor-->
+
             <div class="format">
                 <button class="format-button" onclick="applyFormat('bold')">Bold</button>
                 <button class="format-button" onclick="applyFormat('italic')">Italic</button>
                 <button class="format-button" onclick="applyFormat('underline')">Underline</button>
                 <button class="format-button" onclick="applyFormat('list')">List</button>
             </div>
+
+                <!--Divs for Space (because i'm a noob)-->
+
             <div class="space"></div>
             <div class="space"></div>
+
+                <!--Clock (date and time)-->
+
             <div class="clock">
-                <span id="currentDateTime">YYYY-MM-DD / 00:00:00</span>
+                <span id="currentDateTime" class=""currentDateTime>YYYY-MM-DD / 00:00:00</span>
             </div>
+
+                <!--Submit/Save Button-->
+
             <div class="submit">
                 <button class="save-entry" type="submit" onclick="saveContent()">Save Log</button>
             </div>
+            
+                <!--Back Button-->
+
             <div class="back">
                 <a href="index.html"><button class="home-button">Back</button></a>
             </div>
+
         </div>
+
+            <!--Text Editor-->
+        
         <div id="editor" class="editor">
             <div class="editor-header" contenteditable="true" id="editor-header" placeholder="Enter your header..."></div>
             <div class="editor-content" contenteditable="true" id="editor-content" placeholder="Type your content here..."></div>
         </div>
+
+            <!--Scripts-->
+
         <script src="entry.js"></script>
         <script src="app.js"></script>
     </body>

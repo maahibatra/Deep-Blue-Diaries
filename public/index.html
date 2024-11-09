@@ -8,26 +8,48 @@
     </head>
     <body>
         <div class="header">Deep Blue Diaries</div>
+
+            <!--Buttons for Homepage-->
+
         <div class="buttons">
+
+                <!--New Entry-->
+
             <div class="options">
+
                 <button class="button entry-hover">New Entry</button>
+
                 <div class="options-content">
-                    <a href="new-entry.html" class="no-prompt">No Prompt</a>
-                    <a href="shadow-prompt.html" class="shadow-prompt">Shadow Prompt</a>
+                    <a href="new-entry.html" class="no-prompt" tabindex="-1" role="menuitem">No Prompt</a>
+                    <a href="shadow-prompt.html" class="shadow-prompt" tabindex="-1" role="menuitem">Shadow Prompt</a>
                 </div>
+
             </div>
-            <a href="captains-log.html"><button class="button">Captain's Log</button></a>
-            <a href="message-in-a-bottle.html"><button class="button">Message in a Bottle</button></a>
-            <a href="https://github.com/maahibatra/Deep-Blue-Diaries/blob/main/README.md"><button class="button">Help</button></a>
+
+                <!--Logs, Message in a Bottle, Help-->
+
+            <a href="captains-log.html" tabindex="-1"><button class="button">Captain's Log</button></a>
+            <a href="message-in-a-bottle.html" tabindex="-1"><button class="button">Message in a Bottle</button></a>
+            <a href="https://github.com/maahibatra/Deep-Blue-Diaries/blob/main/README.md" target="_blank" tabindex="-1"><button class="button">Help</button></a>
+
         </div>
+
+            <!--Marine Conservation and Fun Facts-->
+
         <div class="mcff">
+
             <a href="marine-conservation-whale.html" target="_blank">
                 <img class="mcwhale" src="assets/mcwhale.png" alt="Marine Conservation Whale">
                 <div class="text-mcw" id="conservation"></div>
             </a>
+
             <img class="ffshark" src="assets/ffshark.png" alt="Fun Fact Shark">
             <div class="text-ffs" id="fun-fact"></div>
+
         </div>
+
+            <!--Scripts-->
+
         <script src="main.js"></script>
         <script src="app.js"></script>
     </body>

@@ -93,6 +93,8 @@ const facts = [
     }
 ];
 
+    //Ouch. Anyways, Facts Over.
+
 const conservation = [
     "I'm the Marine Conservation Whale!",
     "Click on me to know how to help our oceans.",
@@ -112,28 +114,29 @@ function getConservation() {
     return conservation[randomIndex];
 }
 
+    //Give FFShark and MCWhale their Lines.
+
 window.onload = function() {
     document.getElementById('conservation').textContent = getConservation();
-        const fact = getFact();
-        const funFactElement = document.getElementById('fun-fact');
-        funFactElement.textContent = fact.preview;
+    const fact = getFact();
+    const funFactElement = document.getElementById('fun-fact');
+    funFactElement.textContent = fact.preview;
     
-        funFactElement.onclick = function(event) {
-            // Prevent the event from bubbling up to document
-            event.stopPropagation();
+    funFactElement.onclick = function(event) {
+        event.stopPropagation();
     
-            if (funFactElement.textContent === fact.preview) {
-                funFactElement.textContent = fact.fullSentence;
-            } else {
-                funFactElement.textContent = fact.preview;
-            }
-        };
-    
-        document.onclick = function() {
+        if (funFactElement.textContent === fact.preview) {
+            funFactElement.textContent = fact.fullSentence;
+        } else {
             funFactElement.textContent = fact.preview;
-        };
+        }
+    };   
+    document.onclick = function() {
+        funFactElement.textContent = fact.preview;
     };
-    
+};
+
+    //Check if any Bottles have Washed up.
 
 function checkWashUpDate() {
     const savedContentList = JSON.parse(localStorage.getItem('savedContentList')) || [];
