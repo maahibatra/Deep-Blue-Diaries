@@ -1,11 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Entry</title>
-</head>
-<body>
-    New Entry
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>New Entry</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="header-2">New Entry</div>
+        <div class="header-3">&rarr; No prompt.</div>
+        <div class="bar">
+            <div class="format">
+                <button class="format-button" onclick="applyFormat('bold')">Bold</button>
+                <button class="format-button" onclick="applyFormat('italic')">Italic</button>
+                <button class="format-button" onclick="applyFormat('heading')">Heading</button>
+                <button class="format-button" onclick="applyFormat('list')">List</button>
+            </div>
+            <div class="mood">
+                <select name="moods" class="mood-select">
+                    <option value="select-mood">Select Mood</option>
+                    <option value="happy">Happy</option>
+                    <option value="calm">Calm</option>
+                    <option value="reflective">Reflective</option>
+                    <option value="sad">Sad</option>
+                    <option value="excited">Excited</option>
+                </select>
+            </div>
+            <div class="submit">
+                <button class="save-entry" type="submit" form="journalForm">Save Entry</button>
+            </div>
+            <div class="clock">
+                <span id="currentDateTime">YYYY-MM-DD / 00:00:00</span>
+            </div>        
+        </div>
+        <form id="journalForm" action="/submit-entry" method="post">
+            <div class="text-editor" contenteditable="true" name="journalEntry" id="editor">
+                Type your text here...
+            </div>
+        </form>
+        <script>
+            function applyFormat(command) {
+                const editor = document.getElementById('editor');
+                editor.focus();
+                
+                switch (command) {
+                    case 'bold':
+                        document.execCommand('bold', false, null);
+                        break;
+                    case 'italic':
+                        document.execCommand('italic', false, null);
+                        break;
+                    case 'heading':
+                        document.execCommand('formatBlock', false, 'H2');
+                        break;
+                    case 'list':
+                        document.execCommand('insertUnorderedList', false, null);
+                        break;
+                }
+            } 
+        </script>
+        <script>
+            function updateDateTime() {
+                const now = new Date();
+                
+                const year = now.getFullYear();
+                const month = String(now.getMonth() + 1).padStart(2, '0');
+                const day = String(now.getDate()).padStart(2, '0');
+                
+                const hours = String(now.getHours()).padStart(2, '0');
+                const minutes = String(now.getMinutes()).padStart(2, '0');
+                const seconds = String(now.getSeconds()).padStart(2, '0');
+                
+                document.getElementById('currentDateTime').textContent = `${year}-${month}-${day} / ${hours}:${minutes}:${seconds}`;
+            }
+
+            setInterval(updateDateTime, 1000);
+            updateDateTime();
+        </script>
+        <script src="app.js"></script>
+    </body>
 </html>

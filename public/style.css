@@ -1,11 +1,9 @@
-/* General Styles */
 body {
     background-color: black;
     color: white;
     font-family: Didot, serif;
 }
 
-/* Header Styles */
 .header {
     display: inline-block;
     color: blue;
@@ -15,14 +13,30 @@ body {
     border-bottom: 0.3vw solid blue;
 }
 
-/* Link Styles */
+.header-2 {
+    display: inline-block;
+    color: blue;
+    font-family: Didot, serif;
+    font-size: 3vw;
+    padding: 0.5vw 2vw;
+    border-bottom: 0.3vw solid blue;
+}
+
+.header-3 {
+    color: blue;
+    font-family: Didot, serif;
+    font-size: 1.6vw;
+    padding: 0.2vw 0.5vw;
+    margin: 0.4vw;
+    margin-bottom: 1vw;
+}
+
 a {
     color: blue;
     text-decoration: none;
 }
 
-/* Button Styles */
-button, a.button, .new-entry {
+.button, a.button, .new-entry {
     display: inline-flex;
     text-align: left;
     background: none;
@@ -38,8 +52,7 @@ button, a.button, .new-entry {
     border-radius: 0.3vw;
 }
 
-/* Hover Effects */
-button:hover {
+.button:hover {
     background-color: rgb(7, 7, 7);
 }
 
@@ -47,7 +60,6 @@ button:hover {
     background-color: rgb(31, 31, 31);
 }
 
-/* Options and Dropdown Styles */
 .options {
     position: relative;
 }
@@ -63,7 +75,6 @@ button:hover {
     display: block;
 }
 
-/* Option Button Styles */
 .no-prompt, .shadow-prompt {
     display: block;
     text-align: left;
@@ -80,7 +91,6 @@ button:hover {
     border-radius: 0.3vw;
 }
 
-/* Button Container */
 .buttons {
     position: absolute;
     height: 31vw;
@@ -89,4 +99,121 @@ button:hover {
     justify-content: space-around;
     left: 4vw;
     top: 14vw;
+}
+
+.log {
+    background-color: rgb(12, 12, 12);
+    border: 0.2vw solid blue;
+    border-radius: 1vw;
+    padding: 1vw;
+    margin: 1vw;
+    max-width: 52vw;
+}
+
+.bar {
+    display: flex;
+    justify-content: space-around;
+}
+
+.bar-2 {
+    display: flex;
+    justify-content: space-around;
+    max-width: 50vw;
+    margin: 0.8vw;
+    border-bottom: 0.1vw solid blue;
+}
+
+.log-entry {
+    margin: 1vw;
+    margin-left: 2vw;
+}
+
+.log-header {
+    font-size: 1.5vw;
+    margin-bottom: 0.3vw;
+}
+
+.log-content {
+    margin-left: 1vw;
+}
+
+.text-editor {
+    background-color: rgb(12, 12, 12);
+    height: 28vw;
+    max-height: 28vw;
+    margin: 2vw;
+    border: 0.3vw solid blue;
+    border-radius: 1vw;
+    padding: 1vw;
+    font-size: 1vw;
+    overflow-y: auto;
+    word-wrap: break-word;
+    color: blue;
+}
+
+.format-button {
+    display: inline-flex;
+    text-align: left;
+    background: none;
+    color: blue;
+    font-family: Didot, serif;
+    font-size: 1vw;
+    width: fit-content;
+    max-width: 20vw;
+    padding: 0.45vw 0.8vw;
+    white-space: nowrap;
+    cursor: pointer;
+    border: 0.25vw solid blue;
+    border-radius: 0.3vw;
+    margin-left: 1vw;
+}
+
+.mood-select {
+    display: inline-flex;
+    text-align: left;
+    background: none;
+    color: blue;
+    font-family: Didot, serif;
+    font-size: 1vw;
+    width: fit-content;
+    max-width: 20vw;
+    padding: 0.45vw 0.8vw;
+    white-space: nowrap;
+    cursor: pointer;
+    border: 0.25vw solid blue;
+    border-radius: 0.3vw;
+}
+
+.save-entry {
+    display: inline-flex;
+    text-align: left;
+    background: none;
+    color: blue;
+    font-family: Didot, serif;
+    font-size: 1vw;
+    width: fit-content;
+    max-width: 20vw;
+    padding: 0.45vw 0.8vw;
+    white-space: nowrap;
+    cursor: pointer;
+    border: 0.25vw solid blue;
+    border-radius: 0.3vw;
+}
+
+.clock {
+    display: inline-flex;
+    text-align: left;
+    background: none;
+    color: blue;
+    font-family: Didot, serif;
+    font-size: 1vw;
+    width: fit-content;
+    max-width: 20vw;
+    padding: 0.45vw 0.8vw;
+    white-space: nowrap;
+    border-bottom: 0.25vw solid blue;
+}
+
+.log-entries {
+    color: blue
 }
