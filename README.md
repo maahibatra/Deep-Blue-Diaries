@@ -5,7 +5,6 @@
 Journalling can be so boring nowadays. I mean, where's the fun? All the webapps for journalling are mirrors of mirrors of uncreativity. I decided to put an end to that, making a creative website for journalling with an ocean-themed look.
 However, that's not the only aspect of this project.
 Oceans matter so much to the world; so do the living creatures in the ocean. Inspired by my cute stuffed toy, Wayle, who sits on my table, I wanted to give resources and knowledge to people through this website.
-<img src="assets/wayle.png" width="300"/>
 Clean the oceans, donate to charitable causes, and do whatever you can to save these precious pools of life.
 
 NOTE: FOR HELP OR PROBLEMS, GO TO [Help Section](#help)
@@ -17,14 +16,6 @@ https://deep-blue-diaries.vercel.app/
 
 Or check out the repository:
 https://github.com/maahibatra/Deep-Blue-Diaries
-
-## Screenshots
-
-<img src="assets/screenshot-mainpage.png" width="300"/>
-<img src="assets/screenshot-yesprompt.png" width="300"/>
-<img src="assets/screenshot-captainslog.png" width="300"/>
-<img src="assets/screenshot-messageinabottle.png" width="300"/>
-<img src="assets/screenshot-marineconservationwhale.png" width="300"/>
 
 ## Help
 
