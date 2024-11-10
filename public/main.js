@@ -114,7 +114,7 @@ function getConservation() {
     return conservation[randomIndex];
 }
 
-    //Give FFShark and MCWhale their Lines.
+    //Give FF Shark and MC Whale their Lines.
 
 window.onload = function() {
     document.getElementById('conservation').textContent = getConservation();
@@ -141,7 +141,7 @@ window.onload = function() {
 function checkWashUpDate() {
     const savedContentList = JSON.parse(localStorage.getItem('savedContentList')) || [];
     const today = new Date();
-
+    
     savedContentList.forEach((entry, index) => {
         const washUpDate = new Date(entry.washUpDate);
 
@@ -151,12 +151,30 @@ function checkWashUpDate() {
             washUpDate.getDate() === today.getDate()
         ) {
             alert(`Your message in a bottle has washed up! It was supposed to reappear today.`);
-
+    
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('washed-up-message');
+    
+            messageDiv.innerHTML = `
+                <div class="message">
+                    <div class="bar-3">
+                        <div class="message-bar">${entry.mood}</div>
+                        <div class="message-bar">${entry.dateTime}</div>
+                    </div>
+                    <div class="messages">
+                        <div class="message-header">${entry.header}</div>
+                        <div class="message-content">${entry.content}</div>
+                    </div>
+                </div>
+            `;
+    
+            document.body.appendChild(messageDiv);
+    
             savedContentList.splice(index, 1);
-
             localStorage.setItem('savedContentList', JSON.stringify(savedContentList));
         }
     });
 }
+    
 
 document.addEventListener('DOMContentLoaded', checkWashUpDate);

@@ -68,12 +68,12 @@ function throwContent() {
         return;
     }
 
-    const today = new Date();
-    const futureDate = new Date(washUpDate);
-    if (futureDate <= today) {
-        alert("Please select a future date.");
-        return;
-    }
+    // const today = new Date();
+    // const futureDate = new Date(washUpDate);
+    // if (futureDate <= today) {
+    //     alert("Please select a future date.");
+    //     return;
+    // }
 
         //Push to localStorage.
     
