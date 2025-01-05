@@ -47,3 +47,8 @@ One of his fact interests you? Click on it and he'll tell you more!
 
 MC Whale loves to talk about how YOU can save our oceans.
 Click on her to learn about marine conservation!
+
+# Usage of AI - AI has been used in the creation of this project, specifically ChatGPT.
+- AI has been used in creation of facts and information, then edited by me to make sure it's not wrong.
+- AI has been used in debugging errors.
+- AI has been used in implementing localStorage as I was nottt understanding them from tutorials.
